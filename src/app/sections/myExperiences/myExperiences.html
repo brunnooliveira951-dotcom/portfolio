@@ -1,0 +1,33 @@
+<div class="xp-head">
+    <p class="section-label" data-reveal>{{ i18n.translations().experience.label }}</p>
+    <h2 class="section-title" data-reveal data-delay="0.08" data-testid="experience-title">{{ i18n.translations().experience.title }}</h2>
+</div>
+
+<div class="xp-company" data-reveal data-testid="experience-company-card">
+    <div class="xp-company-logo" aria-hidden="true">N</div>
+    <div>
+        <h3>{{ i18n.translations().experience.company }}</h3>
+        <p class="xp-role">{{ i18n.translations().experience.role }}</p>
+        <p class="xp-meta">{{ i18n.translations().experience.location }} · {{ i18n.translations().experience.period }}</p>
+    </div>
+</div>
+
+<div class="timeline" data-testid="experience-timeline-container">
+    @for (step of i18n.translations().experience.steps; track step.level; let i = $index; let last = $last) {
+        <div class="tl-step" data-reveal [attr.data-delay]="0.08 * i" [attr.data-testid]="'timeline-step-' + i">
+        <div class="tl-marker">
+            <span class="tl-dot" [class.current]="last"></span>
+            @if (!last) { <span class="tl-line"></span> }
+        </div>
+        <div class="tl-card" [class.current]="last">
+            <div class="tl-top">
+            <h4>{{ step.level }}</h4>
+            <span class="tl-tag" [class.current]="last">
+                {{ last ? i18n.translations().experience.currentLabel : step.tag }}
+            </span>
+            </div>
+            <p>{{ step.text }}</p>
+        </div>
+        </div>
+    }
+</div>

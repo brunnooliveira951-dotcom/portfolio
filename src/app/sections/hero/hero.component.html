@@ -1,0 +1,88 @@
+<div class="hero-glow" aria-hidden="true"></div>
+<p class="hero-greeting load-in" style="animation-delay:.35s" data-testid="hero-greeting">
+    {{ i18n.translations().hero.greeting }} Brunno Oliveira
+</p>
+
+<h1 class="hero-title" data-testid="hero-title">
+    <span class="mask"><span class="mask-line" style="animation-delay:.45s">{{ i18n.translations().hero.titleA }}</span></span>
+    <span class="mask"><span class="mask-line accent" style="animation-delay:.6s">{{ i18n.translations().hero.titleB }}</span></span>
+</h1>
+
+<p class="hero-sub load-in" style="animation-delay:.85s" data-testid="hero-subtitle">
+    {{ i18n.translations().hero.sub }}
+</p>
+
+<div class="hero-ctas load-in" style="animation-delay:1s">
+    <button class="btn-primary" (click)="goTo('contact')" data-testid="hero-contact-button">
+        {{ i18n.translations().hero.primary }}
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </button>
+    <button class="btn-ghost" (click)="goTo('experience')" data-testid="hero-experience-button">
+        {{ i18n.translations().hero.secondary }}
+    </button>
+</div>
+
+<button class="email-chip load-in" style="animation-delay:1.15s" (click)="copyEmail()" data-testid="hero-email-chip">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m3 6 9 7 9-7"/></svg>
+    <span>{{ email }}</span>
+    <svg class="copy-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+</button>
+
+<div class="hero-art load-in" style="animation-delay:.7s" aria-hidden="true">
+    <div class="hero-art-inner floaty">
+        <svg class="devices" viewBox="0 0 900 420" data-testid="hero-devices-illustration">
+        <defs>
+            <linearGradient id="screenGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#F5F3FF"/>
+            <stop offset="100%" stop-color="#EDE9FE"/>
+            </linearGradient>
+            <linearGradient id="barGrad" x1="0" y1="1" x2="0" y2="0">
+            <stop offset="0%" stop-color="#7C3AED"/>
+            <stop offset="100%" stop-color="#A78BFA"/>
+            </linearGradient>
+        </defs>
+        <rect x="230" y="70" width="440" height="270" rx="18" fill="#fff" stroke="#E9DFFB" stroke-width="3"/>
+        <rect x="230" y="70" width="440" height="270" rx="18" fill="none" stroke="#6D28D9" stroke-width="3" stroke-opacity=".12"/>
+        <rect x="252" y="94" width="396" height="222" rx="10" fill="url(#screenGrad)"/>
+        <rect x="272" y="116" width="120" height="10" rx="5" fill="#C4B5FD"/>
+        <rect x="272" y="136" width="80" height="8" rx="4" fill="#DDD3F8"/>
+        <g>
+            <rect x="276" y="236" width="34" height="64" rx="7" fill="url(#barGrad)"/>
+            <rect x="322" y="206" width="34" height="94" rx="7" fill="url(#barGrad)" opacity=".85"/>
+            <rect x="368" y="252" width="34" height="48" rx="7" fill="url(#barGrad)" opacity=".7"/>
+            <rect x="414" y="186" width="34" height="114" rx="7" fill="url(#barGrad)"/>
+            <rect x="460" y="222" width="34" height="78" rx="7" fill="url(#barGrad)" opacity=".85"/>
+            <rect x="506" y="168" width="34" height="132" rx="7" fill="url(#barGrad)"/>
+        </g>
+        <polyline points="276,196 340,172 404,182 468,150 532,128" fill="none" stroke="#5B21B6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="532" cy="128" r="7" fill="#5B21B6"/>
+        <rect x="562" y="116" width="66" height="52" rx="9" fill="#fff" stroke="#E9DFFB" stroke-width="2.5"/>
+        <circle cx="584" cy="142" r="13" fill="none" stroke="#7C3AED" stroke-width="6" stroke-dasharray="58 24" stroke-linecap="round" transform="rotate(-90 584 142)"/>
+        <rect x="604" y="130" width="16" height="5" rx="2.5" fill="#C4B5FD"/>
+        <rect x="604" y="141" width="12" height="5" rx="2.5" fill="#DDD3F8"/>
+        <rect x="604" y="152" width="20" height="5" rx="2.5" fill="#EDE9FE"/>
+        <path d="M180 340 h540 l26 40 a12 12 0 0 1 -10 18 H164 a12 12 0 0 1 -10 -18 z" fill="#fff" stroke="#E9DFFB" stroke-width="3"/>
+        <rect x="410" y="352" width="80" height="10" rx="5" fill="#EDE9FE"/>
+        <g class="float-card">
+            <rect x="86" y="150" width="150" height="108" rx="14" fill="#fff" stroke="#E9DFFB" stroke-width="3"/>
+            <rect x="104" y="170" width="70" height="8" rx="4" fill="#7C3AED"/>
+            <rect x="104" y="190" width="114" height="7" rx="3.5" fill="#DDD3F8"/>
+            <rect x="104" y="207" width="96" height="7" rx="3.5" fill="#DDD3F8"/>
+            <rect x="104" y="228" width="52" height="16" rx="8" fill="#EDE9FE"/>
+            <text x="130" y="240" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600" fill="#5B21B6" text-anchor="middle">SQL</text>
+        </g>
+        <g class="float-card-2">
+            <rect x="668" y="216" width="150" height="100" rx="14" fill="#fff" stroke="#E9DFFB" stroke-width="3"/>
+            <polyline points="688,288 712,258 736,270 760,240 796,246" fill="none" stroke="#7C3AED" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="760" cy="240" r="5" fill="#7C3AED"/>
+            <rect x="688" y="234" width="60" height="7" rx="3.5" fill="#DDD3F8"/>
+        </g>
+        <circle cx="180" cy="96" r="10" fill="#C4B5FD" opacity=".8"/>
+        <circle cx="726" cy="60" r="14" fill="#EDE9FE"/>
+        <circle cx="726" cy="60" r="7" fill="#A78BFA"/>
+        <rect x="120" y="300" width="16" height="16" rx="4" fill="#C4B5FD" opacity=".7" transform="rotate(18 128 308)"/>
+        <text x="90" y="130" font-family="'JetBrains Mono', monospace" font-size="20" fill="#A78BFA" opacity=".9">&lt;/&gt;</text>
+        <text x="792" y="120" font-family="'JetBrains Mono', monospace" font-size="20" fill="#A78BFA" opacity=".9">&#123; &#125;</text>
+        </svg>
+    </div>
+</div>

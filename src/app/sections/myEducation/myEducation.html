@@ -1,0 +1,14 @@
+<div class="edu-card" data-reveal data-testid="education-card">
+    <div class="edu-left">
+        <p class="section-label light">{{ i18n.translations().education.label }}</p>
+        <h2 data-testid="education-title">{{ i18n.translations().education.title }}</h2>
+        <p class="edu-degree">{{ i18n.translations().education.degree }}</p>
+        <p class="edu-meta">{{ i18n.translations().education.period }} · {{ i18n.translations().education.location }}</p>
+        <p class="edu-note">{{ i18n.translations().education.note }}</p>
+    </div>
+    <div class="edu-pills">
+        @for (pill of i18n.translations().education.pills; track pill; let i = $index) {
+            <span class="pill" [attr.data-testid]="'education-pill-' + i">{{ pill }}</span>
+        }
+    </div>
+</div>
